@@ -103,7 +103,7 @@ class Game {
             fast: { health: 6, speed: 2.0, color: 'yellow', gold: 7, damage: 2 },
             tank: { health: 30, speed: 1.0, color: 'blue', gold: 8, damage: 3 },
             boss: { health: 50, speed: 0.8, color: 'purple', gold: 10, damage: 5 },
-            elite: { health: 1000, speed: 0.3, color: 'gold', gold: 15, damage: 10 }
+            elite: { health: 1000, speed: 0.5, color: 'gold', gold: 40, damage: 10 }
         };
         
         this.deathAnimations = [];
