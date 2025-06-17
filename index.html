@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-Gon Defender</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hintergrundmusik -->
+    <audio id="backgroundMusic" loop>
+        <source src="sounds/background_music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="startScreen" class="start-screen">
+        <img src="images/game_logo.png" alt="N-Gon Defender Logo" class="start-image">
+        <div class="start-content">
+            <button id="startGameBtn" class="start-btn">Start Game</button>
+        </div>
+    </div>
+
+    <div id="gameContainer" class="game-container" style="display: none;">
+        <canvas id="gameCanvas"></canvas>
+        <div class="ui-container">
+            <div class="tower-selection">
+                <button class="tower-btn" data-tower="Edge Cutter"></button>
+                <button class="tower-btn" data-tower="Angle Breaker"></button>
+                <button class="tower-btn" data-tower="Vertex Shredder"></button>
+                <button class="tower-btn" data-tower="Symmetry Crusher"></button>
+                <button class="tower-btn" data-tower="Polygon Eraser"></button>
+                <button class="tower-btn" data-tower="Core Synth"></button>
+            </div>
+            <div class="wave-info">
+                <button id="nextWaveBtn" class="next-wave-btn" style="display: none;">Next Wave</button>
+            </div>
+            <button id="upgradeRangeBtn" style="display: none;">Upgrade range </button>
+            <button id="upgradeDamageBtn" style="display: none;">Upgrade damage </button>
+            <div id="upgradeSystem" style="display: none;">
+                <h3>Upgrades</h3>
+                <p>Click on a tower to upgrade it.</p>
+                <p>Range: +1 grid (500 gold)</p>
+                <p>Damage from wave 50: + initial damage (initial tower cost)</p>
+            </div>
+            <button id="helpBtn" class="help-btn">Help</button>
+            <div class="copyright-info">
+                N-Gon Defender v1.0<br>
+                © 2025 Daniel Weinlein
+            </div>
+        </div>
+    </div>
+
+    <div id="helpScreen" class="help-screen" style="display: none;">
+        <div class="help-content">
+            <h2>How to Play</h2>
+            <ul>
+                <li>Place towers on the grid to stop the enemies.</li>
+                <li>Enemies that get through will reduce your lives based on their strength.</li>
+                <li>You start with 100 lives and 100 gold.</li>
+                <li>Be careful where you place your towers — they have different ranges and cannot be moved once placed.</li>
+            </ul>
+            <button id="backToGameBtn" class="back-btn">Resume Game</button>
+        </div>
+    </div>
+
+    <div id="gameOverScreen" class="game-over-screen" style="display: none;">
+        <h2>Game Over!</h2>
+        <p>You have reached wave <span id="waveReached">0</span> </p>
+        <p>Restart with F5 or reload the page!</p>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html> 
